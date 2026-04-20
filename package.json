@@ -1,5 +1,5 @@
 {
-  "name": "sitemap-generator",
+  "name": "goseries-sitemap",
   "version": "1.0.0",
   "scripts": {
     "build": "node generate-sitemap.js"
