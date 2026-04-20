@@ -1,284 +1,330 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-  <!-- Histats.com  START  (aync)-->
-<script type="text/javascript">var _Hasync= _Hasync|| [];
+
+<!-- META -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>หงสาวดี EP.10 GOSERIES-THAI | ดูซีรี่ย์ออนไลน์ ฟรี</title>
+
+<!-- HISTATS -->
+<script type="text/javascript">
+var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,5011173,4,0,0,0,00010000']);
 _Hasync.push(['Histats.fasi', '1']);
 _Hasync.push(['Histats.track_hits', '']);
 (function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+var hs = document.createElement('script');
+hs.type = 'text/javascript';
+hs.async = true;
 hs.src = ('//s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5011173&101" alt="php hit counter" border="0"></a></noscript>
-<!-- Histats.com  END  -->
+(document.head || document.body).appendChild(hs);
+})();
+</script>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>หงสาวดี EP.10 GOSERIES-THAI | เว็บดูซีรี่ย์ย้อนหลัง ดูซีรี่ย์ออนไลน์ ดูฟรี ไม่มีโฆษณา</title>
-
-<!-- POPUNDER (di bawah header) -->
+<!-- POPUNDER -->
 <script src='https://buffcasualwhine.com/iFXF2/SsA7jfavPZhBV0GJ4/X7ZDeXR/-ETVe4NOdFDAk9hyN/9SkUDqnt/miOC3wPKmsbRKS/NVa/9yJ/Uq-IJiAL74RfanQY/5cXwJWLqux/xNvWH5WCSj6eiB/k7Yyh19HxNj'></script>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial;
-    background: #000;
-    color: #fff;
+
+/* RESET */
+*{box-sizing:border-box;margin:0;padding:0}
+
+/* BODY */
+body{
+    font-family:Arial, sans-serif;
+    background:#000;
+    color:#fff;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1300px;
-    margin: 20px auto;
-    padding: 10px;
+/* CONTAINER */
+.container{
+    display:flex;
+    gap:15px;
+    max-width:1200px;
+    margin:auto;
+    padding:10px;
 }
 
-/* LEFT & RIGHT ADS */
-.sidebar {
-    width: 160px;
+/* SIDEBAR */
+.sidebar{
+    width:160px;
+    flex-shrink:0;
 }
 
 /* MAIN */
-.main {
-    flex: 1;
-    max-width: 900px;
+.main{
+    flex:1;
+    max-width:900px;
 }
 
 /* PLAYER */
-.player-container {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: #000;
-    border-radius: 6px;
-    overflow: hidden;
+.player-container{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    background:#000;
+    border-radius:8px;
+    overflow:hidden;
 }
 
-.play-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.6);
-    border: 1px solid #fff;
-    padding: 12px 25px;
-    cursor: pointer;
-    color: #fff;
+/* PLAY BUTTON */
+.play-btn{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:rgba(0,0,0,0.7);
+    border:1px solid #fff;
+    padding:10px 20px;
+    color:#fff;
+    cursor:pointer;
+    border-radius:6px;
 }
 
-.controls {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-    padding: 10px;
-    display: flex;
-    gap: 10px;
+/* CONTROLS */
+.controls{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);
+    padding:8px;
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
-.progress {
-    flex: 1;
-    height: 5px;
-    background: #333;
+/* PROGRESS */
+.progress{
+    flex:1;
+    height:5px;
+    background:#333;
+    border-radius:5px;
 }
-
-.progress-bar {
-    width: 0%;
-    height: 100%;
-    background: orange;
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:orange;
 }
 
 /* SERVER */
-.server-list {
-    margin-top: 10px;
-    background: #111;
+.server-list{
+    margin-top:10px;
+    background:#111;
+    border-radius:6px;
+}
+.server{
+    padding:12px;
+    border-bottom:1px solid #222;
+    cursor:pointer;
+}
+.server:hover{
+    background:#222;
+}
+.server.active{
+    background:linear-gradient(to right,#ff5f00,#ff9900);
 }
 
-.server {
-    padding: 12px;
+/* BANNER */
+.banner-center{
+    margin:15px 0;
+    text-align:center;
+}
+iframe{
+    max-width:100%;
 }
 
-.server.active {
-    background: linear-gradient(to right, #ff5f00, #ff9900);
-}
+/* MOBILE DEFAULT */
+.banner-mobile{display:none}
 
-/* BANNER AREA */
-.banner-center {
-    margin: 15px 0;
-    text-align: center;
+/* TABLET */
+@media(max-width:1000px){
+    .container{
+        flex-direction:column;
+        align-items:center;
+    }
+    .sidebar{display:none;}
+    .main{max-width:100%;}
 }
 
 /* MOBILE */
-@media(max-width: 1000px){
-    .container {
-        flex-direction: column;
-        align-items: center;
+@media(max-width:600px){
+
+    .controls{
+        flex-direction:column;
+        align-items:flex-start;
     }
-    .sidebar {
-        display: none;
+
+    .banner-728,
+    .banner-468{
+        display:none;
+    }
+
+    .banner-mobile{
+        display:block;
     }
 }
+
 </style>
 </head>
 
 <body>
 
 <div class="container">
-    <!-- LEFT ADS 160x600 -->
-    <div class="sidebar">
-        <script>
-          atOptions = {
-            'key' : 'e132c6412476f3cc77d11b3519cd21b9',
-            'format' : 'iframe',
-            'height' : 600,
-            'width' : 160
-          };
-        </script>
-        <script src="https://buffcasualwhine.com/e132c6412476f3cc77d11b3519cd21b9/invoke.js"></script>
-    </div>
 
-    <!-- MAIN CONTENT -->
-    <div class="main">
+<!-- LEFT ADS -->
+<div class="sidebar">
+<script>
+atOptions = {
+'key':'e132c6412476f3cc77d11b3519cd21b9',
+'format':'iframe',
+'height':600,
+'width':160
+};
+</script>
+<script src="https://buffcasualwhine.com/e132c6412476f3cc77d11b3519cd21b9/invoke.js"></script>
+</div>
 
-        <!-- TOP BANNER 728x90 -->
-        <div class="banner-center">
-            <script>
-              atOptions = {
-                'key' : '2d751854ce36e13fefddaa58f93251e2',
-                'format' : 'iframe',
-                'height' : 90,
-                'width' : 728
-              };
-            </script>
-            <script src="https://buffcasualwhine.com/2d751854ce36e13fefddaa58f93251e2/invoke.js"></script>
-        </div>
+<!-- MAIN -->
+<div class="main">
 
-        <!-- PLAYER -->
-        <div class="player-container">
-            <button class="play-btn" onclick="togglePlay()">Play</button>
+<!-- TOP BANNER -->
+<div class="banner-center banner-728">
+<script>
+atOptions = {
+'key':'2d751854ce36e13fefddaa58f93251e2',
+'format':'iframe',
+'height':90,
+'width':728
+};
+</script>
+<script src="https://buffcasualwhine.com/2d751854ce36e13fefddaa58f93251e2/invoke.js"></script>
+</div>
 
-            <div class="controls">
-                <button onclick="togglePlay()">▶</button>
-                <span id="time">00:00 / 60:50</span>
+<!-- PLAYER -->
+<div class="player-container">
+<button class="play-btn" onclick="togglePlay()">Play</button>
 
-                <div class="progress">
-                    <div class="progress-bar" id="progress"></div>
-                </div>
-            </div>
-        </div>
+<div class="controls">
+<button onclick="togglePlay()">▶</button>
+<span id="time">00:00 / 60:50</span>
 
-        <!-- BANNER 468x60 -->
-        <div class="banner-center">
-            <script>
-              atOptions = {
-                'key' : 'ee6fbbaee01d7a12aeeb5d58f3126e1f',
-                'format' : 'iframe',
-                'height' : 60,
-                'width' : 468
-              };
-            </script>
-            <script src="https://buffcasualwhine.com/ee6fbbaee01d7a12aeeb5d58f3126e1f/invoke.js"></script>
-        </div>
-        <!-- SERVER -->
-        <div class="server-list">
-            <h1><span style="font-weight: 400;">หงสาวดี EP.10</span></h1>
-            <div class="server active">▶ ตัวเล่นหลัก</div>
-            <div class="server">▶ ตัวเล่นสำรอง</div>
-        </div>
+<div class="progress">
+<div class="progress-bar" id="progress"></div>
+</div>
+</div>
+</div>
 
-        <!-- BANNER 300x250 -->
-        <div class="banner-center">
-            <script>
-              atOptions = {
-                'key' : '53541ca00eed825e8c431c12f7418ac0',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300
-              };
-            </script>
-            <script src="https://buffcasualwhine.com/53541ca00eed825e8c431c12f7418ac0/invoke.js"></script>
-        </div>
+<!-- MID BANNER -->
+<div class="banner-center banner-468">
+<script>
+atOptions = {
+'key':'ee6fbbaee01d7a12aeeb5d58f3126e1f',
+'format':'iframe',
+'height':60,
+'width':468
+};
+</script>
+<script src="https://buffcasualwhine.com/ee6fbbaee01d7a12aeeb5d58f3126e1f/invoke.js"></script>
+</div>
 
-    </div>
+<!-- SERVER -->
+<div class="server-list">
+<h1 style="padding:10px;">หงสาวดี EP.10</h1>
+<div class="server active">▶ ตัวเล่นหลัก</div>
+<div class="server">▶ ตัวเล่นสำรอง</div>
+</div>
 
-    <!-- RIGHT ADS 160x300 -->
-    <div class="sidebar">
-        <script>
-          atOptions = {
-            'key' : '328472b6f3804a37481a66024bd30649',
-            'format' : 'iframe',
-            'height' : 300,
-            'width' : 160
-          };
-        </script>
-        <script src="https://buffcasualwhine.com/328472b6f3804a37481a66024bd30649/invoke.js"></script>
-    </div>
+<!-- 300x250 -->
+<div class="banner-center">
+<script>
+atOptions = {
+'key':'53541ca00eed825e8c431c12f7418ac0',
+'format':'iframe',
+'height':250,
+'width':300
+};
+</script>
+<script src="https://buffcasualwhine.com/53541ca00eed825e8c431c12f7418ac0/invoke.js"></script>
+</div>
 
 </div>
 
-<!-- MOBILE BANNER 320x50 -->
-<div class="banner-center">
-    <script>
-      atOptions = {
-        'key' : '113942e911746c421f6b5497bf65a2c6',
-        'format' : 'iframe',
-        'height' : 50,
-        'width' : 320
-      };
-    </script>
-    <script src="https://buffcasualwhine.com/113942e911746c421f6b5497bf65a2c6/invoke.js"></script>
+<!-- RIGHT ADS -->
+<div class="sidebar">
+<script>
+atOptions = {
+'key':'328472b6f3804a37481a66024bd30649',
+'format':'iframe',
+'height':300,
+'width':160
+};
+</script>
+<script src="https://buffcasualwhine.com/328472b6f3804a37481a66024bd30649/invoke.js"></script>
+</div>
+
+</div>
+
+<!-- MOBILE BANNER -->
+<div class="banner-center banner-mobile">
+<script>
+atOptions = {
+'key':'113942e911746c421f6b5497bf65a2c6',
+'format':'iframe',
+'height':50,
+'width':320
+};
+</script>
+<script src="https://buffcasualwhine.com/113942e911746c421f6b5497bf65a2c6/invoke.js"></script>
 </div>
 
 <script>
-let playing = false;
-let currentTime = 0;
-let duration = 830;
+
+let playing=false;
+let currentTime=0;
+let duration=3650;
 let interval;
 
-function formatTime(sec) {
-    let m = Math.floor(sec / 60);
-    let s = sec % 60;
-    return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+function formatTime(sec){
+let m=Math.floor(sec/60);
+let s=sec%60;
+return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 }
 
-function togglePlay() {
-    const btn = document.querySelector('.play-btn');
+function togglePlay(){
+const btn=document.querySelector('.play-btn');
 
-    if (!playing) {
-        playing = true;
-        btn.innerText = "Pause";
+if(!playing){
+playing=true;
+btn.innerText="Pause";
 
-        /* SMARTLINK redirect saat play */
-        window.open("https://buffcasualwhine.com/henpkny1f?key=381eaab06b0c4afd4f526aab207f6ca2", "_blank");
+/* SMARTLINK */
+window.open("https://buffcasualwhine.com/henpkny1f?key=381eaab06b0c4afd4f526aab207f6ca2","_blank");
 
-        interval = setInterval(() => {
-            if (currentTime < duration) {
-                currentTime++;
-                updateUI();
-            } else {
-                clearInterval(interval);
-            }
-        }, 1000);
+interval=setInterval(()=>{
+if(currentTime<duration){
+currentTime++;
+updateUI();
+}else{
+clearInterval(interval);
+}
+},1000);
 
-    } else {
-        playing = false;
-        btn.innerText = "Play";
-        clearInterval(interval);
-    }
+}else{
+playing=false;
+btn.innerText="Play";
+clearInterval(interval);
+}
 }
 
-function updateUI() {
-    document.getElementById("time").innerText =
-        `${formatTime(currentTime)} / 60:50`;
+function updateUI(){
+document.getElementById("time").innerText=
+`${formatTime(currentTime)} / 60:50`;
 
-    let percent = (currentTime / duration) * 100;
-    document.getElementById("progress").style.width = percent + "%";
+let percent=(currentTime/duration)*100;
+document.getElementById("progress").style.width=percent+"%";
 }
+
 </script>
 
 </body>
