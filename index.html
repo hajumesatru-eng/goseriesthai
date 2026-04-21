@@ -1,162 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Histats.com  START  (aync)-->
-<script type="text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,5011173,4,0,0,0,00010000']);
-_Hasync.push(['Histats.fasi', '1']);
-_Hasync.push(['Histats.track_hits', '']);
-(function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-hs.src = ('//s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5011173&101" alt="php hit counter" border="0"></a></noscript>
-<!-- Histats.com  END  -->
 
 <meta charset="UTF-8">
-<link rel="sitemap" href="/sitemap.xml">  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GOSERIES-THAI | เว็บดูซีรี่ย์ย้อนหลัง ดูซีรี่ย์ออนไลน์ ดูฟรี ไม่มีโฆษณา</title>
+<title>GOSERIES-THAI | ดูซีรี่ย์ออนไลน์ ฟรี</title>
+<link rel="sitemap" href="/sitemap.xml">  
 
-<!-- POPUNDER (di bawah header) -->
+<!-- HISTATS -->
+<script type="text/javascript">
+var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,5011173,4,0,0,0,00010000']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script');
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.head || document.body).appendChild(hs);
+})();
+</script>
+
+<!-- POPUNDER -->
 <script src='https://buffcasualwhine.com/iFXF2/SsA7jfavPZhBV0GJ4/X7ZDeXR/-ETVe4NOdFDAk9hyN/9SkUDqnt/miOC3wPKmsbRKS/NVa/9yJ/Uq-IJiAL74RfanQY/5cXwJWLqux/xNvWH5WCSj6eiB/k7Yyh19HxNj'></script>
 
 <style>
 body {
-    margin: 0;
-    font-family: Arial;
-    background: #000;
-    color: #fff;
+    margin:0;
+    font-family:Arial;
+    background:#000;
+    color:#fff;
 }
 
+/* CONTAINER */
 .container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1300px;
-    margin: 20px auto;
-    padding: 10px;
-}
-
-/* LEFT & RIGHT ADS */
-.sidebar {
-    width: 160px;
-}
-
-/* MAIN */
-.main {
-    flex: 1;
-    max-width: 900px;
+    max-width:1000px;
+    margin:auto;
+    padding:10px;
 }
 
 /* PLAYER */
 .player-container {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: #000;
-    border-radius: 6px;
-    overflow: hidden;
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    background:#000;
+    border-radius:6px;
+    overflow:hidden;
 }
 
 .play-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.6);
-    border: 1px solid #fff;
-    padding: 12px 25px;
-    cursor: pointer;
-    color: #fff;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    padding:12px 25px;
+    background:rgba(0,0,0,0.7);
+    border:1px solid #fff;
+    color:#fff;
+    cursor:pointer;
 }
 
+/* CONTROLS */
 .controls {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-    padding: 10px;
-    display: flex;
-    gap: 10px;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    padding:8px;
+    display:flex;
+    align-items:center;
+    gap:8px;
 }
 
 .progress {
-    flex: 1;
-    height: 5px;
-    background: #333;
+    flex:1;
+    height:5px;
+    background:#333;
 }
 
 .progress-bar {
-    width: 0%;
-    height: 100%;
-    background: orange;
+    width:0%;
+    height:100%;
+    background:orange;
 }
 
-/* SERVER */
-.server-list {
-    margin-top: 10px;
-    background: #111;
+/* BANNER */
+.banner {
+    text-align:center;
+    margin:12px 0;
 }
 
-.server {
-    padding: 12px;
+/* STICKY MOBILE ADS */
+.sticky-ad {
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    text-align:center;
+    background:#000;
+    z-index:9999;
 }
 
-.server.active {
-    background: linear-gradient(to right, #ff5f00, #ff9900);
-}
-
-/* BANNER AREA */
-.banner-center {
-    margin: 15px 0;
-    text-align: center;
-}
-
-/* MOBILE */
-@media(max-width: 1000px){
-    .container {
-        flex-direction: column;
-        align-items: center;
+/* DESKTOP SIDEBAR */
+@media(min-width: 1024px){
+    .layout {
+        display:flex;
+        gap:15px;
     }
+
     .sidebar {
-        display: none;
+        width:160px;
+    }
+
+    .main {
+        flex:1;
+    }
+}
+
+/* MOBILE OPTIMIZATION */
+@media(max-width:768px){
+    .banner iframe {
+        max-width:100% !important;
+        height:auto !important;
     }
 }
 </style>
-</head>
 
+</head>
 <body>
 
-<div class="container">
-    <!-- LEFT ADS 160x600 -->
+<div class="container layout">
+
+    <!-- LEFT ADS (DESKTOP) -->
     <div class="sidebar">
-        <script>
-          atOptions = {
-            'key' : 'e132c6412476f3cc77d11b3519cd21b9',
-            'format' : 'iframe',
-            'height' : 600,
-            'width' : 160
-          };
-        </script>
-        <script src="https://buffcasualwhine.com/e132c6412476f3cc77d11b3519cd21b9/invoke.js"></script>
+        <div class="banner">
+            <script>
+            atOptions = {
+                'key':'e132c6412476f3cc77d11b3519cd21b9',
+                'format':'iframe',
+                'height':600,
+                'width':160
+            };
+            </script>
+            <script src="//buffcasualwhine.com/e132c6412476f3cc77d11b3519cd21b9/invoke.js"></script>
+        </div>
     </div>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN -->
     <div class="main">
 
-        <!-- TOP BANNER 728x90 -->
-        <div class="banner-center">
+        <!-- TOP BANNER -->
+        <div class="banner">
             <script>
-              atOptions = {
-                'key' : '2d751854ce36e13fefddaa58f93251e2',
-                'format' : 'iframe',
-                'height' : 90,
-                'width' : 728
-              };
+            atOptions = {
+                'key':'2d751854ce36e13fefddaa58f93251e2',
+                'format':'iframe',
+                'height':90,
+                'width':728
+            };
             </script>
-            <script src="https://buffcasualwhine.com/2d751854ce36e13fefddaa58f93251e2/invoke.js"></script>
+            <script src="//buffcasualwhine.com/2d751854ce36e13fefddaa58f93251e2/invoke.js"></script>
         </div>
 
         <!-- PLAYER -->
@@ -173,112 +175,98 @@ body {
             </div>
         </div>
 
-        <!-- BANNER 468x60 -->
-        <div class="banner-center">
+        <!-- MIDDLE ADS -->
+        <div class="banner">
             <script>
-              atOptions = {
-                'key' : 'ee6fbbaee01d7a12aeeb5d58f3126e1f',
-                'format' : 'iframe',
-                'height' : 60,
-                'width' : 468
-              };
+            atOptions = {
+                'key':'53541ca00eed825e8c431c12f7418ac0',
+                'format':'iframe',
+                'height':250,
+                'width':300
+            };
             </script>
-            <script src="https://buffcasualwhine.com/ee6fbbaee01d7a12aeeb5d58f3126e1f/invoke.js"></script>
-        </div>
-<title>GOSERIES-THAI | เว็บดูซีรี่ย์ย้อนหลัง ดูซีรี่ย์ออนไลน์ ดูฟรี ไม่มีโฆษณา</title>
-        <!-- SERVER -->
-        <div class="server-list">
-            <div class="server active">▶ ตัวเล่นหลัก</div>
-            <div class="server">▶ ตัวเล่นสำรอง</div>
+            <script src="//buffcasualwhine.com/53541ca00eed825e8c431c12f7418ac0/invoke.js"></script>
         </div>
 
-        <!-- BANNER 300x250 -->
-        <div class="banner-center">
+        <!-- EXTRA ADS (MOBILE HIGH CTR) -->
+        <div class="banner">
             <script>
-              atOptions = {
-                'key' : '53541ca00eed825e8c431c12f7418ac0',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300
-              };
+            atOptions = {
+                'key':'ee6fbbaee01d7a12aeeb5d58f3126e1f',
+                'format':'iframe',
+                'height':60,
+                'width':468
+            };
             </script>
-            <script src="https://buffcasualwhine.com/53541ca00eed825e8c431c12f7418ac0/invoke.js"></script>
+            <script src="//buffcasualwhine.com/ee6fbbaee01d7a12aeeb5d58f3126e1f/invoke.js"></script>
         </div>
 
     </div>
 
-    <!-- RIGHT ADS 160x300 -->
+    <!-- RIGHT ADS -->
     <div class="sidebar">
-        <script>
-          atOptions = {
-            'key' : '328472b6f3804a37481a66024bd30649',
-            'format' : 'iframe',
-            'height' : 300,
-            'width' : 160
-          };
-        </script>
-        <script src="https://buffcasualwhine.com/328472b6f3804a37481a66024bd30649/invoke.js"></script>
+        <div class="banner">
+            <script>
+            atOptions = {
+                'key':'328472b6f3804a37481a66024bd30649',
+                'format':'iframe',
+                'height':300,
+                'width':160
+            };
+            </script>
+            <script src="//buffcasualwhine.com/328472b6f3804a37481a66024bd30649/invoke.js"></script>
+        </div>
     </div>
 
 </div>
 
-<!-- MOBILE BANNER 320x50 -->
-<div class="banner-center">
+<!-- STICKY MOBILE BANNER (WAJIB CTR TINGGI) -->
+<div class="sticky-ad">
     <script>
-      atOptions = {
-        'key' : '113942e911746c421f6b5497bf65a2c6',
-        'format' : 'iframe',
-        'height' : 50,
-        'width' : 320
-      };
+    atOptions = {
+        'key':'113942e911746c421f6b5497bf65a2c6',
+        'format':'iframe',
+        'height':50,
+        'width':320
+    };
     </script>
-    <script src="https://buffcasualwhine.com/113942e911746c421f6b5497bf65a2c6/invoke.js"></script>
+    <script src="//buffcasualwhine.com/113942e911746c421f6b5497bf65a2c6/invoke.js"></script>
 </div>
 
 <script>
-let playing = false;
-let currentTime = 0;
-let duration = 830;
-let interval;
+let playing=false, currentTime=0, duration=830, interval;
 
-function formatTime(sec) {
-    let m = Math.floor(sec / 60);
-    let s = sec % 60;
+function formatTime(sec){
+    let m=Math.floor(sec/60);
+    let s=sec%60;
     return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 }
 
-function togglePlay() {
-    const btn = document.querySelector('.play-btn');
+function togglePlay(){
+    const btn=document.querySelector('.play-btn');
 
-    if (!playing) {
-        playing = true;
-        btn.innerText = "Pause";
+    if(!playing){
+        playing=true;
+        btn.innerText="Pause";
 
-        /* SMARTLINK redirect saat play */
-        window.open("https://buffcasualwhine.com/henpkny1f?key=381eaab06b0c4afd4f526aab207f6ca2", "_blank");
+        window.open("https://buffcasualwhine.com/henpkny1f?key=381eaab06b0c4afd4f526aab207f6ca2","_blank");
 
-        interval = setInterval(() => {
-            if (currentTime < duration) {
+        interval=setInterval(()=>{
+            if(currentTime<duration){
                 currentTime++;
-                updateUI();
-            } else {
-                clearInterval(interval);
+                document.getElementById("time").innerText =
+                `${formatTime(currentTime)} / 60:50`;
+
+                document.getElementById("progress").style.width =
+                (currentTime/duration)*100+"%";
             }
-        }, 1000);
+        },1000);
 
     } else {
-        playing = false;
-        btn.innerText = "Play";
+        playing=false;
+        btn.innerText="Play";
         clearInterval(interval);
     }
-}
-
-function updateUI() {
-    document.getElementById("time").innerText =
-        `${formatTime(currentTime)} / 60:50`;
-
-    let percent = (currentTime / duration) * 100;
-    document.getElementById("progress").style.width = percent + "%";
 }
 </script>
 
