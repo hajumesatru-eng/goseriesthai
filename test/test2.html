@@ -24,6 +24,7 @@ body{
   background:#080808;
   color:#fff;
   font-family:Arial,sans-serif;
+  overflow-x:hidden;
 }
 
 .container{
@@ -34,7 +35,7 @@ body{
 }
 
 /* =========================
-AD STYLES
+ADS
 ========================= */
 
 .ad-wrap{
@@ -51,13 +52,12 @@ AD STYLES
   justify-content:center;
   align-items:center;
   overflow:hidden;
-  border-radius:12px;
   max-width:100%;
 }
 
 .page-layout{
   display:grid;
-  grid-template-columns:1fr 300px;
+  grid-template-columns:minmax(0,1fr) 180px;
   gap:20px;
   align-items:start;
 }
@@ -75,26 +75,18 @@ AD STYLES
   bottom:0;
   left:0;
   width:100%;
-  background:#111;
+  background:#0f0f0f;
   padding:6px 0;
   display:flex;
   justify-content:center;
-  z-index:9999;
-  box-shadow:0 -2px 10px rgba(0,0,0,.5);
+  z-index:99999;
+  box-shadow:0 -2px 10px rgba(0,0,0,.4);
 }
 
 .mobile-sticky-inner{
   width:320px;
   height:50px;
   overflow:hidden;
-}
-
-@media(min-width:768px){
-
-  .mobile-sticky-ad{
-    display:none;
-  }
-
 }
 
 @media(max-width:1024px){
@@ -105,6 +97,22 @@ AD STYLES
 
   .sidebar-ads{
     display:none;
+  }
+
+}
+
+@media(min-width:769px){
+
+  .mobile-sticky-ad{
+    display:none;
+  }
+
+}
+
+@media(max-width:768px){
+
+  body{
+    padding-bottom:70px;
   }
 
 }
@@ -244,7 +252,7 @@ PLAYER
 }
 
 /* =========================
-VIDEO CONTROLS
+CONTROLS
 ========================= */
 
 .video-controls{
@@ -300,7 +308,6 @@ VIDEO CONTROLS
   border:none;
   color:#fff;
   font-size:18px;
-  cursor:pointer;
 }
 
 .quality{
@@ -461,9 +468,16 @@ MOBILE
 
 <body>
 
+<script>
+
+const SERIES_THUMBNAIL =
+"https://image.tmdb.org/t/p/original/uj7YzauOnAaLILWWbQKsxfm7ZUX.jpg";
+
+</script>
+
 <div class="container">
 
-<!-- TOP BANNER -->
+<!-- TOP 728x90 -->
 
 <div class="ad-wrap">
 
@@ -488,7 +502,7 @@ MOBILE
 
 <div class="hero">
 
-<img src="https://image.tmdb.org/t/p/original/zG07SgEzTD5GhneXptT3eoZqBvB.jpg">
+<img src="" id="heroImage">
 
 <div class="hero-overlay">
 
@@ -524,8 +538,9 @@ Girl Rules กฎหลัก...ห้ามรักเธอ
 <div class="player-content">
 
 <img
-src="https://image.tmdb.org/t/p/original/zG07SgEzTD5GhneXptT3eoZqBvB.jpg"
+src=""
 class="thumbnail"
+id="playerThumbnail"
 >
 
 <div class="play-btn"
@@ -566,17 +581,17 @@ id="ctaOverlay">
 <div class="cta-buttons">
 
 <button class="cta-btn primary-btn"
-onclick="goWatch()">
+onclick="goSmartLink()">
 ▶ ดูออนไลน์ HD
 </button>
 
 <button class="cta-btn secondary-btn"
-onclick="goBackup()">
+onclick="goSmartLink()">
 📺 เซิร์ฟเวอร์สำรอง
 </button>
 
 <button class="cta-btn telegram-btn"
-onclick="goTelegram()">
+onclick="goSmartLink()">
 📢 กลุ่มอัปเดตตอนใหม่
 </button>
 
@@ -602,12 +617,11 @@ id="progressCurrent"></div>
 
 <div class="left-controls">
 
-<button class="control-btn"
-onclick="toggleFakePlay()">
+<button class="control-btn">
 ⏯
 </button>
 
-<span id="currentTime">
+<span>
 00:00
 </span>
 
@@ -615,7 +629,7 @@ onclick="toggleFakePlay()">
 /
 </span>
 
-<span id="duration">
+<span>
 52:40
 </span>
 
@@ -643,7 +657,7 @@ HD
 </div>
 </div>
 
-<!-- IN CONTENT AD -->
+<!-- 300x250 -->
 
 <div class="ad-wrap">
 
@@ -670,45 +684,11 @@ HD
 ตอนทั้งหมด
 </div>
 
-<div class="episodes">
-
-<script>
-
-for(let i=1;i<=12;i++){
-
-document.write(`
-
-<div class="ep-card"
-onclick="selectEpisode(${i})">
-
-<img
-src="https://image.tmdb.org/t/p/original/zG07SgEzTD5GhneXptT3eoZqBvB.jpg"
-class="ep-thumb"
->
-
-<div class="ep-info">
-
-<div class="ep-title">
-EP ${i}
+<div class="episodes"
+id="episodesContainer">
 </div>
 
-<div class="ep-desc">
-ดูตอนที่ ${i} แบบ HD
-</div>
-
-</div>
-
-</div>
-
-`);
-
-}
-
-</script>
-
-</div>
-
-<!-- BOTTOM BANNER -->
+<!-- 468x60 -->
 
 <div class="ad-wrap">
 
@@ -735,6 +715,8 @@ EP ${i}
 
 <div class="sidebar-ads">
 
+<!-- 160x600 -->
+
 <div class="ad-box">
 
 <script>
@@ -750,6 +732,8 @@ EP ${i}
 <script src="https://buffcasualwhine.com/e132c6412476f3cc77d11b3519cd21b9/invoke.js"></script>
 
 </div>
+
+<!-- 160x300 -->
 
 <div class="ad-box">
 
@@ -796,15 +780,50 @@ EP ${i}
 
 <script>
 
-let fakePlaying = false;
+/* THUMBNAILS */
 
-let currentSeconds = 0;
+document.getElementById("heroImage").src =
+SERIES_THUMBNAIL;
 
-const totalSeconds = 52 * 60 + 40;
+document.getElementById("playerThumbnail").src =
+SERIES_THUMBNAIL;
 
-let fakeInterval;
+/* EPISODES */
 
-/* START PLAYER */
+const episodesContainer =
+document.getElementById("episodesContainer");
+
+for(let i=1;i<=12;i++){
+
+episodesContainer.innerHTML += `
+
+<div class="ep-card"
+onclick="goEpisode(${i})">
+
+<img
+src="${SERIES_THUMBNAIL}"
+class="ep-thumb"
+>
+
+<div class="ep-info">
+
+<div class="ep-title">
+EP ${i}
+</div>
+
+<div class="ep-desc">
+ดูตอนที่ ${i} แบบ HD
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+/* PLAYER */
 
 function startPlayer(){
 
@@ -854,107 +873,23 @@ function startPlayer(){
 
 }
 
-/* PLAY VIDEO */
+/* EPISODE LINK */
 
-function startFakeVideo(){
-
-  fakePlaying = true;
-
-  fakeInterval = setInterval(()=>{
-
-    if(fakePlaying){
-
-      currentSeconds++;
-
-      if(currentSeconds >= totalSeconds){
-
-        currentSeconds =
-        totalSeconds;
-
-        clearInterval(fakeInterval);
-
-      }
-
-      updatePlayer();
-
-    }
-
-  },1000);
-
-}
-
-function updatePlayer(){
-
-  document.getElementById("currentTime")
-  .innerText =
-  formatTime(currentSeconds);
-
-  let percent =
-  (currentSeconds / totalSeconds)
-  * 100;
-
-  document.getElementById("progressCurrent")
-  .style.width =
-  percent + "%";
-
-}
-
-function toggleFakePlay(){
-
-  fakePlaying = !fakePlaying;
-
-}
-
-function formatTime(sec){
-
-  let m =
-  Math.floor(sec / 60);
-
-  let s =
-  sec % 60;
-
-  return String(m)
-  .padStart(2,'0')
-  + ":" +
-  String(s)
-  .padStart(2,'0');
-
-}
-
-/* EPISODE */
-
-function selectEpisode(ep){
-
-  alert("คุณเลือก EP " + ep);
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-}
-
-/* CTA */
-
-function goWatch(){
-
-  document.getElementById("ctaOverlay")
-  .style.display = "none";
-
-  startFakeVideo();
-
-}
-
-function goBackup(){
-
-  alert("กำลังเปลี่ยนเซิร์ฟเวอร์");
-
-}
-
-function goTelegram(){
+function goEpisode(ep){
 
   window.location.href =
-  "https://t.me/example";
+  "https://goseriesthai.pages.dev/girl-rules/ep" +
+  ep +
+  ".html";
+
+}
+
+/* SMARTLINK */
+
+function goSmartLink(){
+
+  window.location.href =
+  "https://buffcasualwhine.com/henpkny1f?key=381eaab06b0c4afd4f526aab207f6ca2";
 
 }
 
