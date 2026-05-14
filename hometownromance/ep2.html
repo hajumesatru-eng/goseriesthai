@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+</script>
+
+<!-- HISTATS -->
+<script>
+var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,5011173,4,0,0,0,00010000']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script');
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.head || document.body).appendChild(hs);
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+ดูซีรีส์ คุณแฟนบ้านนอก EP.2 พากย์ไทย ย้อนหลัง | THB THAILAND
+</title>
+
+<meta name="description"
+content="ดูซีรีส์ คุณแฟนบ้านนอก EP.2 พากย์ไทย HD ฟรี ครบทุกตอน รองรับมือถือ">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#080808;
+  color:#fff;
+  font-family:Arial,sans-serif;
+  overflow-x:hidden;
+}
+
+.container{
+  width:100%;
+  max-width:1300px;
+  margin:auto;
+  padding:15px;
+  padding:15px;
+}
+
+/* =========================
+ADS
+========================= */
+
+.ad-wrap{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:18px 0;
+  overflow:hidden;
+}
+
+.ad-box{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  max-width:100%;
+}
+
+.page-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 180px;
+  gap:20px;
+  align-items:start;
+}
+
+.sidebar-ads{
+  position:sticky;
+  top:15px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.mobile-sticky-ad{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#0f0f0f;
+  padding:6px 0;
+  display:flex;
+  justify-content:center;
+  z-index:99999;
+  box-shadow:0 -2px 10px rgba(0,0,0,.4);
+}
+
+.mobile-sticky-inner{
+  width:320px;
+  height:50px;
+  overflow:hidden;
+}
+
+@media(max-width:1024px){
+
+  .page-layout{
+    grid-template-columns:1fr;
+  }
+
+  .sidebar-ads{
+    display:none;
+  }
+
+}
+
+@media(min-width:769px){
+
+  .mobile-sticky-ad{
+    display:none;
+  }
+
+}
+
+@media(max-width:768px){
+
+  body{
+    padding-bottom:70px;
+  }
+
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:20px;
+}
+
+.hero img{
+  width:100%;
+  height:450px;
+  object-fit:cover;
+  filter:brightness(.45);
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:35px;
+  background:linear-gradient(to top,
+  rgba(0,0,0,.95),
+  transparent);
+}
+
+.title{
+  font-size:42px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.desc{
+  max-width:720px;
+  line-height:1.7;
+  color:#ddd;
+}
+
+.tags{
+  margin-top:18px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.tags span{
+  background:#e50914;
+  padding:7px 14px;
+  border-radius:40px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+/* =========================
+PLAYER
+========================= */
+
+.player{
+  position:relative;
+  width:100%;
+  background:#000;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.player::before{
+  content:"";
+  display:block;
+  padding-top:56.25%;
+}
+
+.player-content{
+  position:absolute;
+  inset:0;
+}
+
+.thumbnail{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.play-btn{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:95px;
+  height:95px;
+  border-radius:50%;
+  background:rgba(0,0,0,.7);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:52px;
+  cursor:pointer;
+  z-index:5;
+}
+
+.buffering{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:10;
+}
+
+.spinner{
+  width:45px;
+  height:45px;
+  border:4px solid #333;
+  border-top:4px solid #e50914;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+.buffer-text{
+  margin-top:14px;
+  font-size:15px;
+}
+
+/* =========================
+CONTROLS
+========================= */
+
+.video-controls{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:12px;
+  background:linear-gradient(to top,
+  rgba(0,0,0,.9),
+  transparent);
+}
+
+.progress-container{
+  position:relative;
+  width:100%;
+  height:5px;
+  margin-bottom:12px;
+}
+
+.progress-bg{
+  width:100%;
+  height:5px;
+  background:#444;
+  border-radius:10px;
+}
+
+.progress-current{
+  position:absolute;
+  top:0;
+  left:0;
+  width:0%;
+  height:5px;
+  background:#e50914;
+  border-radius:10px;
+}
+
+.controls-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.left-controls,
+.right-controls{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.control-btn{
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:18px;
+}
+
+.quality{
+  background:#e50914;
+  padding:4px 8px;
+  border-radius:5px;
+  font-size:11px;
+  font-weight:bold;
+}
+
+/* =========================
+CTA
+========================= */
+
+.cta-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.94);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:20;
+}
+
+.cta-box{
+  width:90%;
+  max-width:420px;
+  background:#111;
+  border:1px solid #222;
+  border-radius:18px;
+  padding:30px;
+  text-align:center;
+}
+
+.cta-title{
+  font-size:24px;
+  margin-bottom:10px;
+  font-weight:bold;
+}
+
+.cta-sub{
+  color:#aaa;
+  font-size:14px;
+  margin-bottom:22px;
+  line-height:1.6;
+}
+
+.cta-buttons{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.cta-btn{
+  border:none;
+  border-radius:10px;
+  padding:15px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.primary-btn{
+  background:#e50914;
+  color:#fff;
+}
+
+.secondary-btn{
+  background:#222;
+  color:#fff;
+}
+
+.telegram-btn{
+  background:#0088cc;
+  color:#fff;
+}
+
+/* =========================
+EPISODES
+========================= */
+
+.section-title{
+  margin-top:35px;
+  margin-bottom:18px;
+  font-size:26px;
+  font-weight:bold;
+}
+
+.episodes{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:16px;
+}
+
+.ep-card{
+  background:#111;
+  border:1px solid #222;
+  border-radius:14px;
+  overflow:hidden;
+  transition:.3s;
+  cursor:pointer;
+}
+
+.ep-card:hover{
+  transform:translateY(-4px);
+  border-color:#e50914;
+}
+
+.ep-thumb{
+  width:100%;
+  height:95px;
+  object-fit:cover;
+}
+
+.ep-info{
+  padding:12px;
+}
+
+.ep-title{
+  font-size:15px;
+  font-weight:bold;
+  margin-bottom:6px;
+}
+
+.ep-desc{
+  font-size:12px;
+  color:#aaa;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  .hero img{
+    height:320px;
+  }
+
+  .hero-overlay{
+    padding:20px;
+  }
+
+  .title{
+    font-size:28px;
+  }
+
+  .play-btn{
+    width:75px;
+    height:75px;
+    font-size:40px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<script>
+
+const SERIES_THUMBNAIL =
+"https://image.tmdb.org/t/p/original/syFEiVSevDA2cmYqGdHWqw72bFb.jpg";
+
+</script>
+
+<div class="container">
+
+<!-- TOP 728x90 -->
+
+<div class="ad-wrap">
+
+<div class="ad-box">
+
+<script>
+  atOptions = {
+    'key' : '2d751854ce36e13fefddaa58f93251e2',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+
+<script src="https://buffcasualwhine.com/2d751854ce36e13fefddaa58f93251e2/invoke.js"></script>
+
+</div>
+</div>
+
+<!-- HERO -->
+
+<div class="hero">
+
+<img src="" id="heroImage">
+
+<div class="hero-overlay">
+
+<div class="title">
+ คุณแฟนบ้านนอก EP.2
+</div>
+
+<div class="desc">
+
+</div>
+
+<div class="tags">
+<span>UNCUT Ver.</span>
+<span>พากย์ไทย</span>
+<span>8 ตอน</span>
+<span>ซีรีส์แนวเกิร์ลเลิฟ (GL) โรแมนติก-คอมเมดี้ (2026)</span>
+</div>
+
+</div>
+</div>
+
+<div class="page-layout">
+
+<!-- MAIN -->
+
+<div>
+
+<!-- PLAYER -->
+
+<div class="player">
+
+<div class="player-content">
+
+<img
+src=""
+class="thumbnail"
+id="playerThumbnail"
+>
+
+<div class="play-btn"
+id="playBtn"
+onclick="startPlayer()">
+▶
+</div>
+
+<!-- BUFFER -->
+
+<div class="buffering"
+id="buffer">
+
+<div class="spinner"></div>
+
+<div class="buffer-text"
+id="bufferText">
+กำลังโหลดวิดีโอ... 0%
+</div>
+
+</div>
+
+<!-- CTA -->
+
+<div class="cta-overlay"
+id="ctaOverlay">
+
+<div class="cta-box">
+
+<div class="cta-title">
+เลือกตัวเลือกการรับชม
+</div>
+
+<div class="cta-sub">
+กรุณาเลือกเซิร์ฟเวอร์เพื่อดูซีรีส์
+</div>
+
+<div class="cta-buttons">
+
+<button class="cta-btn primary-btn"
+onclick="goSmartLink()">
+▶ ดูออนไลน์ HD
+</button>
+
+<button class="cta-btn secondary-btn"
+onclick="goSmartLink()">
+📺 เซิร์ฟเวอร์สำรอง
+</button>
+
+<button class="cta-btn telegram-btn"
+onclick="goSmartLink()">
+📢 กลุ่มอัปเดตตอนใหม่
+</button>
+
+</div>
+
+</div>
+</div>
+
+<!-- CONTROLS -->
+
+<div class="video-controls">
+
+<div class="progress-container">
+
+<div class="progress-bg"></div>
+
+<div class="progress-current"
+id="progressCurrent"></div>
+
+</div>
+
+<div class="controls-bottom">
+
+<div class="left-controls">
+
+<button class="control-btn">
+⏯
+</button>
+
+<span>
+00:00
+</span>
+
+<span style="color:#aaa;">
+/
+</span>
+
+<span>
+52:40
+</span>
+
+</div>
+
+<div class="right-controls">
+
+<span class="quality">
+HD
+</span>
+
+<button class="control-btn">
+⚙
+</button>
+
+<button class="control-btn">
+⛶
+</button>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- 300x250 -->
+
+<div class="ad-wrap">
+
+<div class="ad-box">
+
+<script>
+  atOptions = {
+    'key' : '53541ca00eed825e8c431c12f7418ac0',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+
+<script src="https://buffcasualwhine.com/53541ca00eed825e8c431c12f7418ac0/invoke.js"></script>
+
+</div>
+</div>
+
+<!-- EPISODES -->
+
+<div class="section-title">
+ตอนทั้งหมด
+</div>
+
+<div class="episodes"
+id="episodesContainer">
+</div>
+
+<!-- 468x60 -->
+
+<div class="ad-wrap">
+
+<div class="ad-box">
+
+<script>
+  atOptions = {
+    'key' : 'ee6fbbaee01d7a12aeeb5d58f3126e1f',
+    'format' : 'iframe',
+    'height' : 60,
+    'width' : 468,
+    'params' : {}
+  };
+</script>
+
+<script src="https://buffcasualwhine.com/ee6fbbaee01d7a12aeeb5d58f3126e1f/invoke.js"></script>
+
+</div>
+</div>
+
+</div>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar-ads">
+
+<!-- 160x600 -->
+
+<div class="ad-box">
+
+<script>
+  atOptions = {
+    'key' : 'e132c6412476f3cc77d11b3519cd21b9',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+
+<script src="https://buffcasualwhine.com/e132c6412476f3cc77d11b3519cd21b9/invoke.js"></script>
+
+</div>
+
+<!-- 160x300 -->
+
+<div class="ad-box">
+
+<script>
+  atOptions = {
+    'key' : '328472b6f3804a37481a66024bd30649',
+    'format' : 'iframe',
+    'height' : 300,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+
+<script src="https://buffcasualwhine.com/328472b6f3804a37481a66024bd30649/invoke.js"></script>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MOBILE STICKY -->
+
+<div class="mobile-sticky-ad">
+
+<div class="mobile-sticky-inner">
+
+<script>
+  atOptions = {
+    'key' : '113942e911746c421f6b5497bf65a2c6',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+
+<script src="https://buffcasualwhine.com/113942e911746c421f6b5497bf65a2c6/invoke.js"></script>
+
+</div>
+</div>
+
+<script>
+
+/* THUMBNAILS */
+
+document.getElementById("heroImage").src =
+SERIES_THUMBNAIL;
+
+document.getElementById("playerThumbnail").src =
+SERIES_THUMBNAIL;
+
+/* EPISODES */
+
+const episodesContainer =
+document.getElementById("episodesContainer");
+
+for(let i=1;i<=8;i++){
+
+episodesContainer.innerHTML += `
+
+<div class="ep-card"
+onclick="goEpisode(${i})">
+
+<img
+src="${SERIES_THUMBNAIL}"
+class="ep-thumb"
+>
+
+<div class="ep-info">
+
+<div class="ep-title">
+EP ${i}
+</div>
+
+<div class="ep-desc">
+ดูตอนที่ ${i} แบบ HD
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+/* PLAYER */
+
+function startPlayer(){
+
+  document.getElementById("playBtn")
+  .style.display = "none";
+
+  const buffer =
+  document.getElementById("buffer");
+
+  const bufferText =
+  document.getElementById("bufferText");
+
+  buffer.style.display = "flex";
+
+  let percent = 0;
+
+  let loading = setInterval(()=>{
+
+    percent +=
+    Math.floor(Math.random()*10)+5;
+
+    if(percent >= 100){
+
+      percent = 100;
+
+      clearInterval(loading);
+
+      bufferText.innerText =
+      "โหลดเสร็จสมบูรณ์";
+
+      setTimeout(()=>{
+
+        buffer.style.display = "none";
+
+        document.getElementById("ctaOverlay")
+        .style.display = "flex";
+
+      },800);
+
+    }
+
+    bufferText.innerText =
+    "กำลังโหลดวิดีโอ... " +
+    percent + "%";
+
+  },300);
+
+}
+
+/* EPISODE LINK */
+
+function goEpisode(ep){
+
+  window.location.href =
+  "https://goseriesthai.pages.dev/hometownromance/ep" +
+  ep +
+  ".html";
+
+}
+
+/* SMARTLINK */
+
+function goSmartLink(){
+
+  window.location.href =
+  "https://buffcasualwhine.com/henpkny1f?key=381eaab06b0c4afd4f526aab207f6ca2";
+
+}
+
+</script>
+
+</body>
+</html>
