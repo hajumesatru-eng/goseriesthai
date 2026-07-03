@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GOSERIES-THAI | ดูซีรี่ย์ออนไลน์ ฟรี</title>
 
-<!-- HISTATS -->
 <script>
 var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,5011173,4,0,0,0,00010000']);
@@ -17,9 +16,6 @@ hs.src = ('//s10.histats.com/js15_as.js');
 (document.head || document.body).appendChild(hs);
 })();
 </script>
-
-<!-- POPUNDER -->
-<script src='https://buffcasualwhine.com/iFXF2/SsA7jfavPZhBV0GJ4/X7ZDeXR/-ETVe4NOdFDAk9hyN/9SkUDqnt/miOC3wPKmsbRKS/NVa/9yJ/Uq-IJiAL74RfanQY/5cXwJWLqux/xNvWH5WCSj6eiB/k7Yyh19HxNj'></script>
 
 <style>
 body {
@@ -35,81 +31,11 @@ body {
     padding:10px;
 }
 
-/* DESKTOP */
+/* DESKTOP LAYOUT */
 @media(min-width:1024px){
     .layout {display:flex; gap:15px;}
     .sidebar {width:160px;}
     .main {flex:1;}
-}
-
-/* PLAYER */
-.player-container {
-    position:relative;
-    width:100%;
-    aspect-ratio:16/9;
-    background:#000;
-    border-radius:10px;
-    overflow:hidden;
-}
-
-/* PLAY BUTTON */
-.play-btn {
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    padding:16px 30px;
-    font-size:18px;
-    border-radius:8px;
-    background:rgba(0,0,0,0.8);
-    border:2px solid #fff;
-    color:#fff;
-    cursor:pointer;
-}
-
-/* CONTROLS */
-.controls {
-    position:absolute;
-    bottom:0;
-    width:100%;
-    padding:10px;
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.progress {
-    flex:1;
-    height:5px;
-    background:#333;
-}
-
-.progress-bar {
-    width:0%;
-    height:100%;
-    background:orange;
-}
-
-/* SERVER */
-.server-list {
-    margin-top:15px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-    gap:10px;
-}
-
-.server {
-    padding:12px;
-    text-align:center;
-    border-radius:6px;
-    background:#111;
-    border:1px solid #333;
-    cursor:pointer;
-}
-
-.server.active {
-    background:linear-gradient(to right,#ff5f00,#ff9900);
-    font-weight:bold;
 }
 
 /* BANNER */
@@ -128,6 +54,55 @@ body {
     background:#000;
     z-index:9999;
 }
+
+/* CAPTCHA CENTER BOX */
+.captcha-container {
+    background: #1c1c1c;
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #333;
+    max-width: 350px;
+    margin: 40px auto;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+}
+.captcha-code {
+    background: #333;
+    color: #ff9900;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 6px;
+    user-select: none;
+}
+.captcha-input {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 6px;
+}
+.captcha-btn {
+    background: linear-gradient(to right, #ff5f00, #ff9900);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    width: 100%;
+    transition: 0.2s;
+}
+.captcha-btn:hover { 
+    opacity: 0.9;
+}
 </style>
 
 </head>
@@ -135,7 +110,6 @@ body {
 
 <div class="container layout">
 
-<!-- LEFT ADS -->
 <div class="sidebar">
     <div class="banner">
         <script>
@@ -150,10 +124,8 @@ body {
     </div>
 </div>
 
-<!-- MAIN -->
 <div class="main">
 
-<!-- TOP BANNER -->
 <div class="banner">
 <script>
 atOptions = {
@@ -166,21 +138,15 @@ atOptions = {
 <script src="//buffcasualwhine.com/2d751854ce36e13fefddaa58f93251e2/invoke.js"></script>
 </div>
 
-<!-- PLAYER -->
-<div class="player-container">
-    <button class="play-btn" onclick="togglePlay()">▶ PLAY VIDEO</button>
-
-    <div class="controls">
-        <button onclick="togglePlay()">▶</button>
-        <span id="time">00:00 / 60:50</span>
-
-        <div class="progress">
-            <div class="progress-bar" id="progress"></div>
-        </div>
-    </div>
+<div class="captcha-container">
+    <h3 style="margin-top:0; color:#fff;">Human Verification</h3>
+    <p style="font-size:13px; color:#aaa; margin-bottom:5px;">Please enter the code below to continue:</p>
+    
+    <div id="captchaDisplay" class="captcha-code">XXXX</div>
+    <input type="text" id="captchaInputField" class="captcha-input" placeholder="Enter Captcha Code">
+    <button class="captcha-btn" onclick="validateCaptcha()">VERIFY & CONTINUE</button>
 </div>
 
-<!-- ADS -->
 <div class="banner">
 <script>
 atOptions = {
@@ -193,17 +159,6 @@ atOptions = {
 <script src="//buffcasualwhine.com/53541ca00eed825e8c431c12f7418ac0/invoke.js"></script>
 </div>
 
-<!-- INFO -->
-<p style="font-size:13px;color:#aaa;">หากวิดีโอไม่เล่น กรุณาเลือกเซิร์ฟเวอร์อื่น ↓</p>
-
-<!-- SERVER -->
-<div class="server-list">
-    <div class="server active" onclick="changeServer(this)">▶ Server 1</div>
-    <div class="server" onclick="changeServer(this)">▶ Server 2</div>
-    <div class="server" onclick="changeServer(this)">▶ Server 3</div>
-</div>
-
-<!-- EXTRA ADS -->
 <div class="banner">
 <script>
 atOptions = {
@@ -218,7 +173,6 @@ atOptions = {
 
 </div>
 
-<!-- RIGHT ADS -->
 <div class="sidebar">
     <div class="banner">
         <script>
@@ -235,7 +189,6 @@ atOptions = {
 
 </div>
 
-<!-- STICKY MOBILE -->
 <div class="sticky-ad">
 <script>
 atOptions = {
@@ -249,47 +202,37 @@ atOptions = {
 </div>
 
 <script>
-let playing=false, currentTime=0, duration=830, interval;
+let captchaGenerated = "";
 
-function formatTime(sec){
-    let m=Math.floor(sec/60);
-    let s=sec%60;
-    return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+// Generate kode captcha otomatis saat halaman dibuka
+function generateCaptcha() {
+    const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let result = "";
+    for (let i = 0; i < 4; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    captchaGenerated = result;
+    document.getElementById("captchaDisplay").innerText = result;
 }
 
-function togglePlay(){
-    const btn=document.querySelector('.play-btn');
-
-    if(!playing){
-        playing=true;
-        btn.innerText="Pause";
-
+function validateCaptcha() {
+    const userInput = document.getElementById("captchaInputField").value.trim().toUpperCase();
+    
+    if (userInput === captchaGenerated) {
+        // Jika benar, buka link popunder iklan Anda di tab baru
         window.open("https://buffcasualwhine.com/henpkny1f?key=381eaab06b0c4afd4f526aab207f6ca2","_blank");
-
-        interval=setInterval(()=>{
-            if(currentTime<duration){
-                currentTime++;
-                document.getElementById("time").innerText =
-                `${formatTime(currentTime)} / 60:50`;
-
-                document.getElementById("progress").style.width =
-                (currentTime/duration)*100+"%";
-            }
-        },1000);
-
+        
+        // Membuka player film di tab utama saat ini setelah sukses verifikasi
+        window.location.href = "https://episode-player.pages.dev/"; 
     } else {
-        playing=false;
-        btn.innerText="▶ PLAY VIDEO";
-        clearInterval(interval);
+        alert("Incorrect Captcha code! Please try again.");
+        generateCaptcha();
+        document.getElementById("captchaInputField").value = "";
     }
 }
 
-function changeServer(el){
-    document.querySelectorAll('.server').forEach(s=>s.classList.remove('active'));
-    el.classList.add('active');
-
-    window.open("https://buffcasualwhine.com/henpkny1f?key=381eaab06b0c4afd4f526aab207f6ca2","_blank");
-}
+// Jalankan generator pertama kali
+generateCaptcha();
 </script>
 
 </body>
